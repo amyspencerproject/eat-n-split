@@ -8,10 +8,13 @@ This app was built as an optional challenge for [The Ultimate React Course](http
 
 - Used a avatar generating api to get the friends' images. In the `image: "https://i.pravatar.cc/48?u=499476"` element the number 48 calls for an image with the size of 48 units. The ?u=499476 will assign an id to the avatar so that it can be re-loaded each time the url is called in the browser. In this app the friend's id is used for the url's id as well. When a fried is added the image element string looks like this, `image:${image}?=${id}`
 
+- Made use of optional chaining which is a vanilla JS concept to keep the initial state of the selectedFriend `null`. Without optional chaining `?` a `null` value will break everything in logic that needs a real value. For example the isSelected variable logic won't work if selectedFriend is `null`. So you need to add a `?` and then this `const isSelected = selectedFriend?.id === friend.id` will work beautifully.
+
 ## Useful Resources
 
 - [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID)
 - [Avatar API](https://i.pravatar.cc/48)
+- [Optional Chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
 ### Notes about Vite
 
