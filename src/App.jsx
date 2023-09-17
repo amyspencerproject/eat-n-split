@@ -55,26 +55,30 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <div className="sidebar">
-        <FriendsList
-          friends={friends}
-          onSelect={handleSelection}
-          selectedFriend={selectedFriend}
-        />
-        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
+    <body>
+      <main>
+        <div className="app">
+          <div className="sidebar">
+            <FriendsList
+              friends={friends}
+              onSelect={handleSelection}
+              selectedFriend={selectedFriend}
+            />
+            {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
 
-        <Button onClick={handleShowAddFriend}>
-          {showAddFriend ? "Close" : "Add Friend"}
-        </Button>
-      </div>
-      {selectedFriend && (
-        <FormSpiltBill
-          selectedFriend={selectedFriend}
-          onSplitBill={handleSplitBill}
-        />
-      )}
-    </div>
+            <Button onClick={handleShowAddFriend}>
+              {showAddFriend ? "Close" : "Add Friend"}
+            </Button>
+          </div>
+          {selectedFriend && (
+            <FormSpiltBill
+              selectedFriend={selectedFriend}
+              onSplitBill={handleSplitBill}
+            />
+          )}
+        </div>
+      </main>
+    </body>
   );
 }
 
@@ -160,10 +164,14 @@ function FormAddFriend({ onAddFriend }) {
         onChange={(e) => setName(e.target.value)}
       />
 
-      <label>🌅 Image URL</label>
+      <label>
+        🌅 Image URL{" "}
+        <span className="image-message">Image provided with API </span>
+      </label>
       <input
         type="text"
         value={image}
+        disabled
         onChange={(e) => setImage(e.target.value)}
       />
 

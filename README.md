@@ -1,6 +1,6 @@
 # Eat n Split is a React App
 
-This app was built as an optional challenge for [The Ultimate React Course](https://www.udemy.com/course/the-ultimate-react-course/) taught by Jonas Schmedtmann
+This app was built as an optional challenge for [The Ultimate React Course](https://www.udemy.com/course/the-ultimate-react-course/) taught by Jonas Schmedtmann. The app showcases using React Hooks to update State.
 
 ## Things I learned
 
